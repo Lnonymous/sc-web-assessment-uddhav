@@ -1,25 +1,33 @@
-import { useState } from 'react';
-import { FiLock } from 'react-icons/fi'; // Import the icon
+// src/components/LoginPage.tsx
 
-export default function LoginPage() {
+import { useState } from 'react';
+import { FiLock } from 'react-icons/fi';
+
+interface LoginPageProps {
+  onLoginSuccess: (email: string) => void;
+}
+
+export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     console.log('Form submitted with:', { email, password });
+    onLoginSuccess(email); // Trigger the page change
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+    // New gradient background
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-slate-800 text-white flex items-center justify-center">
       <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-        {/* Title with Icon */}
         <div className="flex items-center justify-center mb-6">
           <FiLock className="text-2xl mr-3 text-gray-400" />
           <h2 className="text-2xl font-bold text-center">Welcome Back</h2>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+          {/* Increased spacing on this div */}
+          <div className="mb-6"> 
             <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
               Email Address
             </label>
@@ -28,7 +36,7 @@ export default function LoginPage() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="you@example.com"
               required
             />
@@ -42,15 +50,15 @@ export default function LoginPage() {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="••••••••"
               required
             />
           </div>
-          {/* Button with Hover Animation */}
+          {/* New button color and animation */}
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105"
           >
             Sign In
           </button>
