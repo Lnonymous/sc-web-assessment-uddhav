@@ -1,19 +1,23 @@
 import { useState } from 'react';
+import { FiLock } from 'react-icons/fi'; // Import the icon
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault(); // Prevents the browser from reloading the page
+    event.preventDefault();
     console.log('Form submitted with:', { email, password });
-    // Later, we would send this data to our backend API
   };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
       <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-6">Welcome Back</h2>
+        {/* Title with Icon */}
+        <div className="flex items-center justify-center mb-6">
+          <FiLock className="text-2xl mr-3 text-gray-400" />
+          <h2 className="text-2xl font-bold text-center">Welcome Back</h2>
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
@@ -43,9 +47,10 @@ export default function LoginPage() {
               required
             />
           </div>
+          {/* Button with Hover Animation */}
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105"
           >
             Sign In
           </button>

@@ -2,13 +2,13 @@
 
 This project is a submission for the Full-Stack Web Developer internship assessment. It includes a complete frontend for a login page and a backend setup that unfortunately ran into persistent, unresolvable dependency issues.
 
-**Candidate:** Uddhav [Your Last Name]
+**Candidate:** Uddhav Menon
 
 ---
 
 ## Live Demo & Video Walkthrough
 
-* **Live Frontend URL:** [Deploy your frontend to Vercel/Netlify and paste the link here]
+* **Live Frontend URL:** https://sc-web-assessment-uddhav.vercel.app/
 * **Video Walkthrough URL:** [Paste your screen recording link here]
 
 ---
