@@ -9,7 +9,7 @@ This project is a submission for the Full-Stack Web Developer internship assessm
 ## Live Demo & Video Walkthrough
 
 * **Live Frontend URL:** https://sc-web-assessment-uddhav.vercel.app/
-* **Video Walkthrough URL:** [Paste your screen recording link here]
+* **Video Walkthrough URL:** 
 
 ---
 
